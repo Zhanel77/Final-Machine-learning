@@ -105,8 +105,9 @@ http://127.0.0.1:8000
 
 ---
 
-### Diploy
-
+### 🚀 Deployment
+The application is live at:
+🌐 https://final-machine-learning.onrender.com
 
 ## 📊 Model Performance
 
