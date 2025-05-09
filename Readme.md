@@ -1,7 +1,6 @@
 # Toxic Comment Classifier (Multi-Label Classification)
 
-This project is a **Machine Learning web application** that detects toxic characteristics in text comments.  
-The model performs **multi-label classification** to identify the following categories:
+A Machine Learning web application that detects toxic characteristics in user-generated text comments. The model performs **multi-label classification** to identify toxic attributes such as:
 
 - `toxic`
 - `severe_toxic`
@@ -10,10 +9,26 @@ The model performs **multi-label classification** to identify the following cate
 - `insult`
 - `identity_hate`
 
-Built using **Random Forest + TF-IDF + FastAPI + HTML/CSS frontend**.
+Built using **Random Forest**, **TF-IDF**, **FastAPI**, and a lightweight **HTML/CSS frontend**.
+
 ---
 
-## Project Structure
+## 📑 Table of Contents
+
+- [File/Folder Structure](#filefolder-structure)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Model Performance](#model-performance)
+- [Configuration](#configuration)
+- [Future Improvements](#future-improvements)
+- [Troubleshooting](#troubleshooting)
+- [Contributors](#contributors)
+- [License](#license)
+
+---
+
+## File/Folder Structure
 
 toxic-app/
 ├── app/
@@ -30,52 +45,67 @@ toxic-app/
 ├── train_clean.csv # Training dataset
 ├── test_clean.csv # Test dataset (features)
 ├── test_labels.csv # Test dataset (labels)
-└── requirements.txt # Dependencies
+└── requirements.txt # Python dependencies
 ---
 
-## How It Works
+## ✨ Features
 
-1. Text is preprocessed and vectorized using **TF-IDF**
-2. A **Random Forest** model predicts one or more labels (multi-label)
-3. User sees predictions + probabilities via a clean FastAPI frontend
+- Multi-label classification of toxic comments
+- Clean, responsive frontend interface
+- Real-time probability display of each label
+- Easily extendable model pipeline
+- FastAPI backend for RESTful service
 
 ---
 
-## How to Run Locally
+## ⚙️ Installation
 
-### 1. Install requirements
+1. **Clone the repository**
+
+```bash
+git clone <your-repo-url>
+cd toxic-app
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
-
-### 2. Train the model
-
+### Usage
+Step 1: Train the model
 ```bash
 python train_model.py
-```
-**This saves:**
+``` 
+This will save the trained model and vectorizer to:
 app/emotion_model.pkl
 app/vectorizer.pkl
 
-### 3. Run FastAPI
+Step 2: Run the web server
 ```bash
 uvicorn app.main:app --reload
 ```
-**Go to: http://127.0.0.1:8000** 
+### Then open your browser and go to:
+http://127.0.0.1:8000
 
- ### Model Performance
-Evaluated on filtered test set (excluding label=-1):
-Algorithm: Random Forest (MultiOutputClassifier)
-Vectorization: TF-IDF (top 10,000 features)
-Metrics: Accuracy, Precision, Recall, F1-score per label
-(See train_model.py console output for full report)
+**Model Performance**
+Algorithm: Random Forest via MultiOutputClassifier
+Vectorization: TF-IDF (Top 10,000 features)
+Evaluation: Accuracy, Precision, Recall, F1-score per label
+Dataset: Custom cleaned dataset excluding invalid labels (label = -1)
+Detailed metrics are printed in the console during training via train_model.py.
 
-### Future Improvements
---Replace RandomForest with XGBoost or BERT
---Add language filter and token normalization
---API version for bulk comment predictions
+🛠️ Configuration
+To change the model or vectorizer:
+Replace emotion_model.pkl and vectorizer.pkl with your custom models.
+Ensure that the format is compatible with predict.py and model_loader.py.
 
-### Author
-Zhanel Kuandyk
-IT-2303
+🔮 Future Improvements
+🔁 Replace RandomForest with XGBoost or BERT
+🌐 Add multilingual support and language filtering
+
+🐞 Troubleshooting
+Module not found: Ensure you're in the correct directory and using a virtual environment.
+Model not loading: Run train_model.py before launching the server.
+Server not starting: Check FastAPI and Uvicorn installation with pip show fastapi uvicorn.
+
+👤 Contributors
+Zhanel Kuandyk – IT-2303
