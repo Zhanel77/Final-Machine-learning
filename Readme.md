@@ -146,4 +146,3 @@ To change the model or vectorizer:
 - **Zhanel Kuandyk** – IT-2303 
 
 ---
-
