@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Toxic Comment Classifier</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Toxic Comment Classifier</h1>
+
+        <form method="post">
+            <textarea name="user_input" placeholder="Enter a comment..." required>{{ user_input or '' }}</textarea><br>
+            <button type="submit">Classify</button>
+        </form>
+
+        {% if result %}
+            <h2> Prediction:</h2>
+            <ul>
+                {% for label, value in result.items() %}
+                    <li><strong>{{ label }}</strong>: {{ "✅" if value else "❌" }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3> Probabilities:</h3>
+            <ul>
+                {% for label, prob in probabilities.items() %}
+                    <li>{{ label }}: {{ prob }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
