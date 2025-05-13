@@ -13,7 +13,7 @@ Built using **Random Forest**, **TF-IDF**, **FastAPI**, and a lightweight **HTML
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [File/Folder Structure](#filefolder-structure)
 - [Features](#features)
@@ -28,7 +28,7 @@ Built using **Random Forest**, **TF-IDF**, **FastAPI**, and a lightweight **HTML
 
 ---
 
-## 📁 File/Folder Structure
+## File/Folder Structure
 
 ```
 toxic-app/
@@ -51,7 +51,7 @@ toxic-app/
 
 ---
 
-## ✨ Features
+## Features
 
 - Multi-label classification of toxic comments
 - Clean, responsive frontend interface
@@ -61,7 +61,7 @@ toxic-app/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 1. **Clone the repository**
 
@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Step 1: Train the model
 
@@ -105,11 +105,11 @@ http://127.0.0.1:8000
 
 ---
 
-### 🚀 Deployment
+###  Deployment
 The application is live at:
-🌐 https://final-machine-learning.onrender.com
+https://final-machine-learning.onrender.com
 
-## 📊 Model Performance
+## Model Performance
 
 - **Algorithm**: Random Forest via `MultiOutputClassifier`
 - **Vectorization**: TF-IDF (Top 10,000 features)
@@ -120,7 +120,7 @@ Detailed metrics are printed in the console during training via `train_model.py`
 
 ---
 
-## 🛠️ Configuration
+## Configuration
 
 To change the model or vectorizer:
 
@@ -129,15 +129,15 @@ To change the model or vectorizer:
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
-- 🔁 Replace RandomForest with XGBoost or BERT
-- 🌐 Add multilingual support and language filtering
-- 📦 Deploy a RESTful API endpoint for batch predictions
+- Replace RandomForest with XGBoost or BERT
+- Add multilingual support and language filtering
+- Deploy a RESTful API endpoint for batch predictions
 
 ---
 
-## 🐞 Troubleshooting
+## Troubleshooting
 
 - **Module not found**: Ensure you're in the correct directory and using a virtual environment.
 - **Model not loading**: Run `train_model.py` before launching the server.
@@ -145,8 +145,16 @@ To change the model or vectorizer:
 
 ---
 
-## 👤 Contributors
+## Example
+
+Positive:
+- **I really enjoyed this article, thanks for sharing.**
+- **Looking forward to your next post!**
+Negative:
+- **You're smart, but sometimes you act like a jerk.**
+- **I hate you and your entire family.**
+
+## Contributors
 
 - **Zhanel Kuandyk** – IT-2303 
-
 ---

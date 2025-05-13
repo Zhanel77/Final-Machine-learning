@@ -47,4 +47,4 @@ print(classification_report(y_test, y_pred, zero_division=0))
 # === Сохранение ===
 joblib.dump(model, "app/emotion_model.pkl")
 joblib.dump(vectorizer, "app/vectorizer.pkl")
-print("✅ Модель и вектор сохранены в папку app/")
+print("Модель и вектор сохранены в папку app/")
